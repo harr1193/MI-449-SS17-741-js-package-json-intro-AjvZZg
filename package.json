@@ -5,20 +5,22 @@
     "dev:server": "live-server",
     "dev:sass": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
     "dev": "run-p dev:*",
-    "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
     "lint:html": "htmlhint index.html",
     "lint:js": "standard clicky.js",
-    "lint:sass": "stylelint 'scss/*.scss'",
-    "deploy:surge": "surge --project . --domain MI-449-SS17-741-js-package-json-intro-AjvZZg-harr1193.sh",
-    "deploy": "run-s lint build:* deploy:surge"
+    "lint:sass": "stylelint 'source/scss/*.scss'",
+    "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
+    "build": "run-p build:*",
+    "deploy:surge": "surge --project . --domain https://mi-449-SS17-741-js-package-json-intro-AjvZZg-harr1193.surge.sh",
+    "deploy": "run-s lint:* build deploy:surge"
   },
   "devDependencies": {
     "live-server": "^1.2.0",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
-    "standard": "^10.0.2",
-    "stylelint-config-standard": "^16.0.0",
-    "surge": "^0.19.0"
+    "surge": "^0.19.0",
+    "htmlhint": "^0.9.13",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0"
   },
   "stylelint": {
    "extends": "stylelint-config-standard"

@@ -1,12 +1,23 @@
-@import "_variables.scss"
+@import "_variables.scss";
 
 body {
   margin: 0;
   background-color: #333;
-  color: #fff
-}
+  color: #fff;
 
-table {
+  .clicky {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #aaf;
+    border: $border-style;
+    box-shadow: $box-shadow-style;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  table,
   .menu {
     position: absolute;
     top: 0;
@@ -17,23 +28,28 @@ table {
     border-bottom: $border-style;
     border-bottom-right-radius: 6px;
     background-color: #777;
-    box-shadow: #000 0 0 15px;
+    box-shadow: $box-shadow-style;
     font-family: $courier-font;
+
     h1 {
       margin: 0 10px;
-      font-size: 20px
+      font-size: 20px;
     }
+
     td {
       text-align: center;
+
       label {
         width: 80px;
       }
+
       label,
       .result {
         text-align: right;
       }
     }
-    button  {
+
+    button {
       width: 80%;
       background-color: #ccf;
       color: #111;
@@ -43,28 +59,19 @@ table {
       font-size: 12px;
       border: $border-style;
       transition: $transition;
-      border-radius: 3px
+      border-radius: 3px;
+
       &:hover {
         cursor: pointer;
         background-color: #ddf;
         width: 85%;
         transition: $transition;
       }
+
       &:active,
       &:focus {
         outline: none;
       }
     }
-  }
-}
-
-.clicky {
-  position: absolute;
-  border-radius: 50%;
-  background-color: #aaf;
-  border: $border-style;
-  box-shadow: #000 0 0 15px
-  &:hover {
-    cursor: pointer;
   }
 }
