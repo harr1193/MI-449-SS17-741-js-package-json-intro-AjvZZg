@@ -10,7 +10,7 @@
     "lint:sass": "stylelint 'source/scss/*.scss'",
     "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
     "build": "run-p build:*",
-    "deploy:surge": "surge --project . --domain https://mi-449-SS17-741-js-package-json-intro-AjvZZg-harr1193.surge.sh",
+    "deploy:surge": "surge --project . --domain https://harr1193-kg-tgc7noax99ajvzzg.surge.sh/",
     "deploy": "run-s lint:* build deploy:surge"
   },
   "devDependencies": {
